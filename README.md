@@ -1,4 +1,4 @@
-# Calculadora de datas de trabalho para pessoas que trabalham X dias e folgam Y dias
+# Calculadora de datas de trabalho
 
 
 <br />
