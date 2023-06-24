@@ -1,1 +1,105 @@
 {% extends 'global/base.html' %}
+
+{% block dates %}
+
+
+<div class="input-container">
+    <form method="GET">
+        <div class="input-group">
+            <label for="data-input">Data do último dia trabalhado:</label>
+            <input type="date" id="data-input" name="work_day">
+        </div>
+        <div class="input-group">
+            <label for="numero-input">Dias de folga entre o trabalho:</label>
+            <input type="number" id="numero-input" name="day_off">
+        </div>
+        <button type="submit">Calcular</button>
+    </form>
+</div>
+
+<h2 align="center" style="color: rgb(110, 110, 108);">
+    January 2021
+</h2>
+<br />
+
+<table bgcolor="lightgrey" align="center" 
+    cellspacing="21" cellpadding="21">
+
+    <thead>
+        <tr>
+            <th style="color: white; background: gray;">
+                Dom</th>
+            <th style="color: white; background: gray;">
+                Seg</th>
+            <th style="color: white; background: gray;">
+                Ter</th>
+            <th style="color: white; background: gray;">
+                Qua</th>
+            <th style="color: white; background: gray;">
+                Qui</th>
+            <th style="color: white; background: gray;">
+                Sex</th>
+            <th style="color: white; background: gray;">
+                Sab</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr></tr>
+        <tr>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+            <td>20</td>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+        </tr>
+        <tr>
+            <td>24</td>
+            <td>25</td>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+            <td>29</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <td>31</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+{% endblock dates %}
