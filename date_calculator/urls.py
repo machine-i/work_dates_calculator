@@ -5,4 +5,5 @@ app_name = 'date_calculator'
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('calculate/', views.calculate, name='calculate'),
 ]

@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from datetime import datetime
+
+month_names = {'1': 'Jan', '2': 'Fev', '3': 'Mar', '4': 'Abr', '5': 'Mai', '6': 'Jun', '7': 'Jul', '8': 'Ago', '9': 'Set', '10': 'Out', '11': 'Nov', '12': 'Dez'}
 
 def work_days(work_date, day_off):
 
@@ -21,16 +22,15 @@ def work_days(work_date, day_off):
 
     return work_date
 
-def index(request):
-
+def calculate(request):
     work = request.GET.get('work_day', '')
     off = request.GET.get('day_off', '').strip()
 
-    if request.GET:
-        if work == '' or off == '':
+    if work == '' or off == '':
             return redirect('date_calculator:index')
         
     work = list(reversed(work.split('-')))
+    work[1] = str(int(work[1]))
     off = int(off)
     
     print('work', work)
@@ -45,6 +45,26 @@ def index(request):
     for i in list_dates:
         print(i)
 
+    months = []
+    for i in range(len(list_dates)):
+        m = month_names[list_dates[i][1]]
+        if m not in months:
+            months.append(m)
+
+
+    context = {
+        'months': months,
+        'work': work,
+        'off': off,
+    }
+
+    return render(
+        request,
+        'date_calculator/index.html',
+        context,
+    )
+
+def index(request):
     return render(
         request,
         'date_calculator/index.html',
