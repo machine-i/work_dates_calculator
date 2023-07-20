@@ -9,7 +9,7 @@ def work_days(work_date, day_off):
     last_days = {0: 31, 1: 28, 2: 31, 3: 30, 4: 31, 5: 30, 6: 31, 7: 31, 8: 30, 9: 31, 10: 30, 11: 31}
     for m in last_days.keys():
         if m == date[1] - 1:
-            date[0] += day_off + 1
+            date[0] += day_off + 1  # A próxima data de trabalho é 1 dia após o último dia de folga.
             if date[0] > last_days[m]:
                 date[0] -= last_days[m]
                 date[1] += 1
@@ -51,11 +51,18 @@ def calculate(request):
         if m not in months:
             months.append(m)
 
+    con = dict()
+    for i in months:
+        con[i] = []
+        for j in list_dates:
+            if month_names[j[1]] != i:
+                continue
+            con[i].append(j[0])
+
 
     context = {
-        'months': months,
-        'work': work,
-        'off': off,
+        'year': list_dates[0][2],
+        'con': con,
     }
 
     return render(
