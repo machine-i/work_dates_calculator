@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+import calendar
 
 month_names = {'1': 'Jan', '2': 'Fev', '3': 'Mar', '4': 'Abr', '5': 'Mai', '6': 'Jun', '7': 'Jul', '8': 'Ago', '9': 'Set', '10': 'Out', '11': 'Nov', '12': 'Dez'}
 
@@ -51,18 +52,24 @@ def calculate(request):
         if m not in months:
             months.append(m)
 
+    cal= calendar.Calendar()
     con = dict()
     for i in months:
-        con[i] = []
+        con[i] = [[], []]
         for j in list_dates:
             if month_names[j[1]] != i:
                 continue
-            con[i].append(j[0])
+            con[i][0].append(j[0])
+            con[i].append(j[1]) if j[1] not in con[i] else None
+        for d in cal.itermonthdays(2023, int(con[i][2])):
+            con[i][1].append(d)
 
 
     context = {
         'year': list_dates[0][2],
         'con': con,
+        'range6': range(6),
+        'range7': range(7),
     }
 
     return render(

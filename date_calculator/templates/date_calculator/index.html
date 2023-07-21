@@ -47,55 +47,65 @@
             </tr>
         </thead>
 
+        {% comment %} <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>{%if '1' in v.0%} -1- {%else%} 1 {% endif %}</td>
+            <td>{%if '2' in v.0%} -2- {%else%} 2 {% endif %}</td>
+        </tr> {% endcomment %}
+
         <tbody>
+
+            {% comment %} {% for r in range6 %}
+                <tr>
+                    {% for c in range7 %}
+                        <td>{%if '1' in v.0%} -1- {%else%} 1 {% endif %}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %} {% endcomment %}
+
+            
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>{%if '1' in v%} -1- {%else%} 1 {% endif %}</td>
-                <td>{%if '2' in v%} -2- {%else%} 2 {% endif %}</td>
-            </tr>
-            <tr></tr>
-            <tr>
-                <td>{%if '3' in v%} -3- {%else%} 3 {% endif %}</td>
-                <td>{%if '4' in v%} -4- {%else%} 4 {% endif %}</td>
-                <td>{%if '5' in v%} -5- {%else%} 5 {% endif %}</td>
-                <td>{%if '6' in v%} -6- {%else%} 6 {% endif %}</td>
-                <td>{%if '7' in v%} -7- {%else%} 7 {% endif %}</td>
-                <td>{%if '8' in v%} -8- {%else%} 8 {% endif %}</td>
-                <td>{%if '9' in v%} -9- {%else%} 9 {% endif %}</td>
-            </tr>
-            <tr>
-                <td>{%if '10' in v%} -10- {%else%} 10 {% endif %}</td>
-                <td>{%if '11' in v%} -11- {%else%} 11 {% endif %}</td>
-                <td>{%if '12' in v%} -12- {%else%} 12 {% endif %}</td>
-                <td>{%if '13' in v%} -13- {%else%} 13 {% endif %}</td>
-                <td>{%if '14' in v%} -14- {%else%} 14 {% endif %}</td>
-                <td>{%if '15' in v%} -15- {%else%} 15 {% endif %}</td>
-                <td>{%if '16' in v%} -16- {%else%} 16 {% endif %}</td>
+                <td>{%if '3' in v.0%} -3- {%else%} 3 {% endif %}</td>
+                <td>{%if '4' in v.0%} -4- {%else%} 4 {% endif %}</td>
+                <td>{%if '5' in v.0%} -5- {%else%} 5 {% endif %}</td>
+                <td>{%if '6' in v.0%} -6- {%else%} 6 {% endif %}</td>
+                <td>{%if '7' in v.0%} -7- {%else%} 7 {% endif %}</td>
+                <td>{%if '8' in v.0%} -8- {%else%} 8 {% endif %}</td>
+                <td>{%if '9' in v.0%} -9- {%else%} 9 {% endif %}</td>
             </tr>
             <tr>
-                <td>{%if '17' in v%} -17- {%else%} 17 {% endif %}</td>
-                <td>{%if '18' in v%} -18- {%else%} 18 {% endif %}</td>
-                <td>{%if '19' in v%} -19- {%else%} 19 {% endif %}</td>
-                <td>{%if '20' in v%} -20- {%else%} 20 {% endif %}</td>
-                <td>{%if '21' in v%} -21- {%else%} 21 {% endif %}</td>
-                <td>{%if '22' in v%} -22- {%else%} 22 {% endif %}</td>
-                <td>{%if '23' in v%} -23- {%else%} 23 {% endif %}</td>
+                <td>{%if '10' in v.0%} -10- {%else%} 10 {% endif %}</td>
+                <td>{%if '11' in v.0%} -11- {%else%} 11 {% endif %}</td>
+                <td>{%if '12' in v.0%} -12- {%else%} 12 {% endif %}</td>
+                <td>{%if '13' in v.0%} -13- {%else%} 13 {% endif %}</td>
+                <td>{%if '14' in v.0%} -14- {%else%} 14 {% endif %}</td>
+                <td>{%if '15' in v.0%} -15- {%else%} 15 {% endif %}</td>
+                <td>{%if '16' in v.0%} -16- {%else%} 16 {% endif %}</td>
             </tr>
             <tr>
-                <td>{%if '24' in v%} -24- {%else%} 24 {% endif %}</td>
-                <td>{%if '25' in v%} -25- {%else%} 25 {% endif %}</td>
-                <td>{%if '26' in v%} -26- {%else%} 26 {% endif %}</td>
-                <td>{%if '27' in v%} -27- {%else%} 27 {% endif %}</td>
-                <td>{%if '28' in v%} -28- {%else%} 28 {% endif %}</td>
-                <td>{%if '29' in v%} -29- {%else%} 29 {% endif %}</td>
-                <td>{%if '30' in v%} -30- {%else%} 30 {% endif %}</td>
+                <td>{%if '17' in v.0%} -17- {%else%} 17 {% endif %}</td>
+                <td>{%if '18' in v.0%} -18- {%else%} 18 {% endif %}</td>
+                <td>{%if '19' in v.0%} -19- {%else%} 19 {% endif %}</td>
+                <td>{%if '20' in v.0%} -20- {%else%} 20 {% endif %}</td>
+                <td>{%if '21' in v.0%} -21- {%else%} 21 {% endif %}</td>
+                <td>{%if '22' in v.0%} -22- {%else%} 22 {% endif %}</td>
+                <td>{%if '23' in v.0%} -23- {%else%} 23 {% endif %}</td>
             </tr>
             <tr>
-                <td>{%if '31' in v%} -31- {%else%} 31 {% endif %}</td>
+                <td>{%if '24' in v.0%} -24- {%else%} 24 {% endif %}</td>
+                <td>{%if '25' in v.0%} -25- {%else%} 25 {% endif %}</td>
+                <td>{%if '26' in v.0%} -26- {%else%} 26 {% endif %}</td>
+                <td>{%if '27' in v.0%} -27- {%else%} 27 {% endif %}</td>
+                <td>{%if '28' in v.0%} -28- {%else%} 28 {% endif %}</td>
+                <td>{%if '29' in v.0%} -29- {%else%} 29 {% endif %}</td>
+                <td>{%if '30' in v.0%} -30- {%else%} 30 {% endif %}</td>
+            </tr>
+            <tr>
+                <td>{%if '31' in v.0%} -31- {%else%} 31 {% endif %}</td>
                 <td></td>
                 <td></td>
                 <td></td>
