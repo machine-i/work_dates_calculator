@@ -20,6 +20,7 @@
 {{con}}
 
 {% for i, v in con.items %}
+
     <h2 align="center" style="color: rgb(110, 110, 108);">
         {{i}} {{year}}
     </h2>
@@ -59,15 +60,15 @@
 
         <tbody>
 
-            {% comment %} {% for r in range6 %}
+            {% for r in range6 %}
                 <tr>
                     {% for c in range7 %}
-                        <td>{%if '1' in v.0%} -1- {%else%} 1 {% endif %}</td>
+                        <td>{{c}}</td>
                     {% endfor %}
                 </tr>
-            {% endfor %} {% endcomment %}
+            {% endfor %}
 
-            
+{% comment %}             
             <tr>
                 <td>{%if '3' in v.0%} -3- {%else%} 3 {% endif %}</td>
                 <td>{%if '4' in v.0%} -4- {%else%} 4 {% endif %}</td>
@@ -112,7 +113,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-            </tr>
+            </tr> {% endcomment %}
         </tbody>
     </table>
 {% endfor %}

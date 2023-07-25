@@ -43,8 +43,8 @@ def calculate(request):
         list_dates.append(work)
         work = work_days(work, off)
 
-    for i in list_dates:
-        print(i)
+    # for i in list_dates:
+    #     print(i)
 
     months = []
     for i in range(len(list_dates)):
@@ -52,7 +52,7 @@ def calculate(request):
         if m not in months:
             months.append(m)
 
-    cal= calendar.Calendar()
+    cal = calendar.Calendar()
     con = dict()
     for i in months:
         con[i] = [[], []]
@@ -63,7 +63,6 @@ def calculate(request):
             con[i].append(j[1]) if j[1] not in con[i] else None
         for d in cal.itermonthdays(2023, int(con[i][2])):
             con[i][1].append(d)
-
 
     context = {
         'year': list_dates[0][2],
