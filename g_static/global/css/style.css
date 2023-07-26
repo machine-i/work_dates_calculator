@@ -6,71 +6,52 @@ body {
 }
 
 .input-container {
-    display: flex;
-    justify-content: space-between;
-    max-width: 600px;
+    max-width: 400px;
     margin: 0 auto;
-}
-
-.input-group {
-    flex: 1;
-    margin-right: 10px;
-}
-
-.input-group:last-child {
-    margin-left: 20px;
-    margin-right: 0;
-}
-
-label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-input[type="date"],
-input[type="number"] {
-    padding: 10px;
+    padding: 20px;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100%;
-}
-
-input[type="date"]::-webkit-inner-spin-button,
-input[type="date"]::-webkit-calendar-picker-indicator {
-    display: none;
-}
-
-input[type="date"]::-webkit-clear-button {
-    -webkit-appearance: none;
-    margin: -10px;
-}
-
-input[type="date"]::-webkit-input-placeholder,
-input[type="number"]::-webkit-input-placeholder {
-    color: #999;
-}
-
-input[type="date"]::-moz-placeholder,
-input[type="number"]::-moz-placeholder {
-    color: #999;
-}
-
-input[type="date"]:-ms-input-placeholder,
-input[type="number"]:-ms-input-placeholder {
-    color: #999;
-}
-
-input[type="date"]::placeholder,
-input[type="number"]::placeholder {
-    color: #999;
-}
-
-input[type="date"]:focus,
-input[type="number"]:focus {
-    outline: none;
-    border-color: #5c9be8;
-}
+    border-radius: 5px;
+  }
+  
+  .date-calculator-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  input[type="date"],
+  input[type="number"] {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
 
 
 table {

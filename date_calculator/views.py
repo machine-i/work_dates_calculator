@@ -55,14 +55,17 @@ def calculate(request):
     cal = calendar.Calendar()
     con = dict()
     for i in months:
-        con[i] = [[], []]
+        con[i] = [[], [[], [], [], [], [], []]]
         for j in list_dates:
             if month_names[j[1]] != i:
                 continue
-            con[i][0].append(j[0])
+            con[i][0].append(int(j[0]))
             con[i].append(j[1]) if j[1] not in con[i] else None
+        row = 0
         for d in cal.itermonthdays(2023, int(con[i][2])):
-            con[i][1].append(d)
+            if len(con[i][1][row]) > 6:
+                row += 1
+            con[i][1][row].append(d)
 
     context = {
         'year': list_dates[0][2],
