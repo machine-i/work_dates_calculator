@@ -17,53 +17,57 @@
     </form>
 </div>
 
+<div id="res" class="container-results">
+    {% for i, v in con.items %}
+        <div class="results">
 
-{% for i, v in con.items %}
+            <h2 class="month" align="center" style="color: rgb(110, 110, 108);">
+                {{i}} {{year}}
+            </h2>
+            <br />
 
-    <h2 align="center" style="color: rgb(110, 110, 108);">
-        {{i}} {{year}}
-    </h2>
-    <br />
+            <table bgcolor="lightgrey" align="center" 
+                cellspacing="21" cellpadding="21">
 
-    <table bgcolor="lightgrey" align="center" 
-        cellspacing="21" cellpadding="21">
+                <thead>
+                    <tr>
+                        <th style="color: white; background: gray;">
+                            Seg</th>
+                        <th style="color: white; background: gray;">
+                            Ter</th>
+                        <th style="color: white; background: gray;">
+                            Qua</th>
+                        <th style="color: white; background: gray;">
+                            Qui</th>
+                        <th style="color: white; background: gray;">
+                            Sex</th>
+                        <th style="color: white; background: gray;">
+                            Sab</th>
+                        <th style="color: white; background: gray;">
+                            Dom</th>
+                    </tr>
+                </thead>
 
-        <thead>
-            <tr>
-                <th style="color: white; background: gray;">
-                    Seg</th>
-                <th style="color: white; background: gray;">
-                    Ter</th>
-                <th style="color: white; background: gray;">
-                    Qua</th>
-                <th style="color: white; background: gray;">
-                    Qui</th>
-                <th style="color: white; background: gray;">
-                    Sex</th>
-                <th style="color: white; background: gray;">
-                    Sab</th>
-                <th style="color: white; background: gray;">
-                    Dom</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            {% for row in v.1 %}
-                <tr>
-                    {% for c in row %}
-                        {% if c == 0 %}
-                            <td></td>
-                        {% else %}
-                            {% if c in v.0 %}
-                                <td style="background-color:LightSkyBlue;">{{c}}</td>
-                            {% else %}
-                                <td>{{c}}</td>
-                            {% endif %}
-                        {% endif %}
+                <tbody>
+                    {% for row in v.1 %}
+                        <tr>
+                            {% for c in row %}
+                                {% if c == 0 %}
+                                    <td></td>
+                                {% else %}
+                                    {% if c in v.0 %}
+                                        <td style="background-color:LightSkyBlue;">{{c}}</td>
+                                    {% else %}
+                                        <td>{{c}}</td>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </tr>
                     {% endfor %}
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-{% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endfor %}
+</div>
+
 {% endblock dates %}

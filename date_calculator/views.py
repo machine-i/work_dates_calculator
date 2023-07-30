@@ -2,12 +2,12 @@ from django.shortcuts import render, redirect
 import calendar
 
 month_names = {'1': 'Jan', '2': 'Fev', '3': 'Mar', '4': 'Abr', '5': 'Mai', '6': 'Jun', '7': 'Jul', '8': 'Ago', '9': 'Set', '10': 'Out', '11': 'Nov', '12': 'Dez'}
+last_days = {0: 31, 1: 28, 2: 31, 3: 30, 4: 31, 5: 30, 6: 31, 7: 31, 8: 30, 9: 31, 10: 30, 11: 31}
 
 def work_days(work_date, day_off):
 
     date = [int(i) for i in work_date]
     
-    last_days = {0: 31, 1: 28, 2: 31, 3: 30, 4: 31, 5: 30, 6: 31, 7: 31, 8: 30, 9: 31, 10: 30, 11: 31}
     for m in last_days.keys():
         if m == date[1] - 1:
             date[0] += day_off + 1  # A próxima data de trabalho é 1 dia após o último dia de folga.
@@ -42,9 +42,6 @@ def calculate(request):
     while int(work[2]) == 2023:
         list_dates.append(work)
         work = work_days(work, off)
-
-    # for i in list_dates:
-    #     print(i)
 
     months = []
     for i in range(len(list_dates)):
