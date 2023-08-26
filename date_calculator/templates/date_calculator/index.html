@@ -7,15 +7,18 @@
     <form action="{% url 'date_calculator:calculate' %}" method="GET" class="date-calculator-form">
       <div class="input-group">
         <label for="data-input">Data do último dia trabalhado:</label>
-        <input type="date" id="data-input" name="work_day" required>
+        <input type="date" id="data-input" name="work_day" value="{{request.GET.work_day}}" required>
       </div>
       <div class="input-group">
         <label for="numero-input">Dias de folga entre o trabalho:</label>
-        <input type="number" id="numero-input" name="day_off" min="0" required>
+        <input type="number" id="numero-input" name="day_off" min="0" value="{{request.GET.day_off}}" required>
       </div>
       <button type="submit">Calcular</button>
     </form>
 </div>
+
+
+{{GET.get}}
 
 <div id="res" class="container-results">
     {% for i, v in con.items %}

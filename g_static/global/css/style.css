@@ -14,6 +14,9 @@ body {
   }
 
 @media screen and (max-width: 700px) {
+  body {
+    padding: 1.46% 0;
+  }
   .input-container {
     max-width: 204.96px;
   }
@@ -78,7 +81,8 @@ body {
 
 table {
   display: relative;
-
+  margin-left: auto;
+  margin-right: auto;
   border-collapse: collapse;
   background: white;
   color: black;
