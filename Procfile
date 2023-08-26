@@ -1,0 +1,1 @@
+web: gunicorn project.wsgi:date_calculator --log-file -
