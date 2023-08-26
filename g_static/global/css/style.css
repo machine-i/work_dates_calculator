@@ -74,8 +74,14 @@ body {
 }
 
 @media screen and (max-width: 700px) {
+  .container-results {
+    max-width: 100%;
+  }
   .results {
     max-width: 100%;
+  }
+  body {
+    zoom: 0.75;
   }
 }
 
